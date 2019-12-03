@@ -1,0 +1,26 @@
+<div class="container">
+  <form name="cursoForm">
+
+    <div class="form-group">
+      <label for= 'nome'> Nome: </label>
+      <input type = 'text' required ng-model="curso.nome" name = 'nome' class="form-control" value="nome">
+    </div>
+    <div ng-show="cursoForm.nome.$error.required && cursoForm.nome.$dirty" class="alert alert-danger">
+      Por favor, insira o nome do Curso!
+    </div>
+    <label for= 'turno'> Turno:</label>
+    <select name='fk_id_turno' required ng-model="curso.fk_id_turno" value="fk_id_turno"><br>
+
+      <option value= '1'> Manhã</option>
+      <option value= '2'> Tarde</option>
+      <option value= '3'> Noite</option>
+      <option value= '4'> Integral</option>
+
+    </select><br>
+    <div ng-show="cursoForm.fk_id_turno.$error.required && cursoForm.fk_id_turno.$dirty" class="alert alert-danger">
+      Por favor, insira o ID do Turno do Curso!
+    </div>
+    <button ng-click="cadastrar()" class="btn btn-dark btn-lg btn-block" ng-disabled="cursoForm.$invalid">Cadastrar</button>
+
+  </form>
+</div>

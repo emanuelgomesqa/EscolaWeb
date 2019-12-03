@@ -1,2 +1,1 @@
-# EscolaWeb
-Aplicação Web
+# escolaWeb
