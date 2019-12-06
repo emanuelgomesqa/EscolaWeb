@@ -2,7 +2,7 @@
 <html ng-app="EscolaWebApp">
   <head>
     <meta charset="utf-8">
-    <title>Página Inicial</title>
+    <title>{{$state.current.title}}</title>
     <link rel="shortcut icon" href="img/ifpb.png">
     <!-- Estilo -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -36,6 +36,7 @@
     <!--Controllers-->
     <script src="js/controller/homeController.js" type="text/javascript"></script>
     <script src="js/controller/alunoController.js" type="text/javascript"></script>
+    <script src="js/controller/alunosController.js" type="text/javascript"></script>
     <script src="js/controller/campusController.js" type="text/javascript"></script>
     <script src="js/controller/cursoController.js" type="text/javascript"></script>
     <script src="js/controller/disciplinaController.js" type="text/javascript"></script>
@@ -58,6 +59,7 @@
 
     <!--Router-->
     <script src="js/router/router.js" type="text/javascript"></script>
+    <script src="js/router/state.js" type="text/javascript"></script>
 
   </head>
   <body>
@@ -82,12 +84,13 @@
               <a class="nav-item nav-link" href="#/curso">Curso</a>
               <a class="nav-item nav-link" href="#/disciplina">Disciplina</a>
               <a class="nav-item nav-link" href="#/turma">Turma</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             </div>
           </div>
         </nav>
       </header>
       <main>
-        <ng-view></ng-view>
+        <ui-view></ui-view>
       </main>
       <footer>
         <div class="col-12">
