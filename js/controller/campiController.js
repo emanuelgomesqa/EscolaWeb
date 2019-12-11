@@ -2,19 +2,20 @@ var campiController = function($scope, $mdToast, campusApi) {
 
   $scope.campi = [];
 
-  let listar = function() {
-      campiApi.listar(nome)
-        .then(function(response) {
-          $scope.campi = response.data;
-        })
-        .catch(function(error) {
+  $scope.listar = function() {
+    console.log("Listando Campus")
+    campusApi.listar()
+      .then(function(response) {
+        $scope.campi = response.data;
+      })
+      .catch(function(error) {
 
-        });
+      });
   };
 
   $scope.pesquisar = function(nome) {
     if (nome.length >= 3) {
-      campiApi.buscarPorNome(nome)
+      campusApi.buscarPorNome(nome)
         .then(function(response) {
           $scope.campi = response.data;
         })
@@ -26,7 +27,7 @@ var campiController = function($scope, $mdToast, campusApi) {
 
   $scope.limparBusca = function() {
     $scope.nome = "";
-    $scope.apresentacoes = [];
+    $scope.campi = [];
   };
 
 }

@@ -11,35 +11,35 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       // Home
       .state('home', {
         url: '/home',
-        title: 'CUME - Página Inicial',
+        title: 'EscolaApp - Página Principal',
         templateUrl: 'home.html',
         controller: 'HomeController'
       })
+
       .state('aluno', {
         url: '/aluno',
-        title: 'CUME - Cadastrar Aluno',
+        title: 'EscolaApp - Cadastrar Aluno',
         templateUrl: 'aluno.html',
         controller: 'AlunoController'
       })
       .state('alunos', {
         url: '/alunos',
-        title: 'CUME - Listar Alunos',
+        title: 'EscolaApp - Listar Alunos',
         templateUrl: 'alunos.html',
         controller: 'AlunosController'
       })
-
       .state('campus', {
         url: '/campus',
-        title: 'CUME - Cadastrar Campus',
+        title: 'EscolaApp - Cadastrar Campus',
         templateUrl: 'campus.html',
         controller: 'CampusController'
       })
       .state('campi', {
         url: '/campi',
-        title: 'CUME - Listar Campi',
+        title: 'EscolaApp - Listar Campi',
         templateUrl: 'campi.html',
         controller: 'CampiController'
-      })
+      });
   })
   //take all whitespace out of string
   .filter('nospace', function() {
