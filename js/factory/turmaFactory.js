@@ -1,22 +1,23 @@
-var turmaFactory = function($http) {
+// Turma - Factory
+let turmaFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/turma";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/turma";
 
-  var _cadastrar = function(turma) {
+  let _cadastrar = function(turma) {
     return $http.post(_path, turma)
   };
 
-  var _atualizar = function(turma) {
+  let _atualizar = function(turma) {
     return $http.put(_path, turma)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/turmas")
   };
 
   return {

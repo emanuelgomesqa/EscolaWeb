@@ -1,4 +1,4 @@
-let disciplinaController = function($scope, disciplinaApi, $mdToast){
+let disciplinaController = function($scope, disciplinaApi, $mdToast, $state){
 
     $scope.nome = {};
 
@@ -21,6 +21,9 @@ let disciplinaController = function($scope, disciplinaApi, $mdToast){
         $mdToast.show(toast);
 
         limparFormulario();
+
+        // Redirecionamento de página.
+        $state.transitionTo('disciplinas', {reload: true, inherit: false, notify: true});
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

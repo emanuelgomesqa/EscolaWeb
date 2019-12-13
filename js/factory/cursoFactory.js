@@ -1,22 +1,22 @@
-var cursoFactory = function($http) {
+let cursoFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/curso";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/curso";
 
-  var _cadastrar = function(curso) {
+  let _cadastrar = function(curso) {
     return $http.post(_path, curso)
   };
 
-  var _atualizar = function(curso) {
+  let _atualizar = function(curso) {
     return $http.put(_path, curso)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/cursos")
   };
 
   return {

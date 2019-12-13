@@ -1,4 +1,4 @@
-let professorController = function($scope, professorApi, $mdToast) {
+let professorController = function($scope, professorApi, $mdToast, $state) {
 
     $scope.professor = {};
 
@@ -15,6 +15,9 @@ let professorController = function($scope, professorApi, $mdToast) {
         $mdToast.show(toast);
 
         limparFormulario();
+
+        // Redirecionamento de página.
+        $state.transitionTo('professores', {reload: true, inherit: false, notify: true});
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

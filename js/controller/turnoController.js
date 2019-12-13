@@ -1,4 +1,4 @@
-let turnoController = function($scope, turnoApi, $mdToast) {
+let turnoController = function($scope, turnoApi, $mdToast, $state) {
 
     $scope.turno = {};
 
@@ -16,6 +16,9 @@ let turnoController = function($scope, turnoApi, $mdToast) {
         $mdToast.show(toast);
 
         limparFormulario();
+
+        // Redirecionamento de página.
+        $state.transitionTo('turnos', {reload: true, inherit: false, notify: true});
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

@@ -1,0 +1,47 @@
+<!-- Aluno - Formulário -->
+<form name="enderecoForm">
+  <div class="form-group">
+    <!-- Logradouro -->
+    <label for='logradouro'> Logradouro: </label>
+    <input type='text' name='logradouro' class="form-control" ng-model="endereco.logradouro" ng-minlength="1" ng-maxlength="25">
+    <div>
+      <div ng-show="enderecoForm.logradouro.$error.minlength && enderecoForm.logradouro.$dirty" class="alert alert-danger">
+        Por favor, o Logradouro não tem o tamanho mínimo válido!
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões -->
+  <button type='reset' ng-click="limparBusca()" name='limpar' class="btn btn-secondary btn-lg btn-block">
+    Limpar
+  </button>
+  <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">
+    Listar
+  </button>
+</form>
+
+<!-- Tabela de Alunos -->
+<div>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr align="center">
+        <th scope="col">Código</th>
+        <th scope="col">Logradouro</th>
+        <th scope="col">Complemento</th>
+        <th scope="col">Bairro</th>
+        <th scope="col">Cep</th>
+        <th scope="col">Número</th>
+      </tr>
+    </thead>
+    <tbody align="center">
+      <tr ng-repeat="endereco in enderecos">
+        <td scope="row">{{endereco.idtb_endereco}}</td>
+        <td scope="row">{{endereco.logradouro}}</td>
+        <td scope="row">{{endereco.complemento}}</td>
+        <td scope="row">{{endereco.bairro}}</td>
+        <td scope="row">{{endereco.cep}}</td>
+        <td scope="row">{{endereco.numero}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

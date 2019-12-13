@@ -1,4 +1,4 @@
-let escolaController = function($scope, escolaApi, $mdToast) {
+let escolaController = function($scope, escolaApi, $mdToast, $state) {
     $scope.escola = {};
 
 
@@ -15,6 +15,9 @@ let escolaController = function($scope, escolaApi, $mdToast) {
         $mdToast.show(toast);
 
         limparFormulario();
+
+        // Redirecionamento de página.
+        $state.transitionTo('escolas', {reload: true, inherit: false, notify: true});
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

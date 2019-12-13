@@ -1,4 +1,4 @@
-let turmaController = function($scope, turmaApi, $mdToast) {
+let turmaController = function($scope, turmaApi, $mdToast, $state) {
 
     $scope.turma = {};
 
@@ -17,6 +17,9 @@ let turmaController = function($scope, turmaApi, $mdToast) {
         $mdToast.show(toast);
 
         limparFormulario();
+
+        // Redirecionamento de página.
+        $state.transitionTo('turmas', {reload: true, inherit: false, notify: true});
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

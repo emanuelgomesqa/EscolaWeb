@@ -1,13 +1,13 @@
-<form name="campusForm">
+<form name="turnosForm">
   <div class="form-group">
     <!-- Nome -->
     <label for='nome'> Nome: </label>
-    <input type='text' name='nome' class="form-control" ng-model="campus.nome" ng-minlength="3" ng-maxlength="25">
+    <input type='text' name='nome' class="form-control" ng-model="turnos.nome" ng-minlength="3" ng-maxlength="25">
     <div>
-      <div ng-show="campusForm.nome.$error.minlength && campusForm.nome.$dirty" class="alert alert-danger">
+      <div ng-show="turnosForm.nome.$error.minlength && turnosForm.nome.$dirty" class="alert alert-danger">
         Por favor, o Nome não tem o tamanho mínimo válido!
       </div>
-      <div ng-show="campusForm.nome.$error.maxlength && campusForm.nome.$dirty" class="alert alert-danger">
+      <div ng-show="turnosForm.nome.$error.maxlength && turnosForm.nome.$dirty" class="alert alert-danger">
         Por favor, o Nome não tem o tamanho máximo válido!
       </div>
     </div>
@@ -28,16 +28,13 @@
     <thead class="thead-light">
       <tr align="center">
         <th scope="col">Código</th>
-        <th scope="col">Sigla</th>
-        <th scope="col">Cidade</th>
+        <th scope="col">Nome</th>
       </tr>
     </thead>
     <tbody align="center">
-      <tr ng-repeat="campus in campi">
-        <td scope="row">{{campus.id_campus}}</td>
-        <td scope="row">{{campus.sigla}}</td>
-        <td scope="row">{{campus.cidade}}</td>
-
+      <tr ng-repeat="turno in turnos">
+        <td scope="row">{{turno.id_turno}}</td>
+        <td scope="row">{{turno.nome}}</td>
       </tr>
     </tbody>
   </table>

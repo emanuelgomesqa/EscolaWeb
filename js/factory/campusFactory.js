@@ -1,22 +1,23 @@
-var campusFactory = function($http) {
+// Campus - Factory
+let campusFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/campus";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/campus";
 
-  var _cadastrar = function(campus) {
+  let _cadastrar = function(campus) {
     return $http.post(_path, campus)
   };
 
-  var _atualizar = function(campus) {
+  let _atualizar = function(campus) {
     return $http.put(_path, campus)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/campi")
   };
 
   return {

@@ -1,4 +1,4 @@
-let cursoController = function($scope, cursoApi, $mdToast) {
+let cursoController = function($scope, cursoApi, $mdToast, $state) {
 
     $scope.curso = {}
 
@@ -21,6 +21,9 @@ let cursoController = function($scope, cursoApi, $mdToast) {
           $mdToast.show(toast);
 
           limparFormulario();
+
+          // Redirecionamento de página.
+          $state.transitionTo('cursos', {reload: true, inherit: false, notify: true});
         })
         .catch(function(error) {
           var toast = $mdToast.simple()

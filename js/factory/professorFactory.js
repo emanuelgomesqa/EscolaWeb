@@ -1,22 +1,23 @@
-var professorFactory = function($http) {
+// Professor - Factory
+let professorFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/professor";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/professor";
 
-  var _cadastrar = function(professor) {
+  let _cadastrar = function(professor) {
     return $http.post(_path, professor)
   };
 
-  var _atualizar = function(professor) {
+  let _atualizar = function(professor) {
     return $http.put(_path, professor)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/professores")
   };
 
   return {

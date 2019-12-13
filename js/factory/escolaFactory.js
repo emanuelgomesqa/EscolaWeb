@@ -1,22 +1,23 @@
-var escolaFactory = function($http) {
+// Escola - Factory
+let escolaFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/escola";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/escola";
 
-  var _cadastrar = function(escola) {
+  let _cadastrar = function(escola) {
     return $http.post(_path, escola)
   };
 
-  var _atualizar = function(escola) {
+  let _atualizar = function(escola) {
     return $http.put(_path, escola)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/escolas")
   };
 
   return {

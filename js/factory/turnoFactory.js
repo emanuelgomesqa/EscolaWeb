@@ -1,22 +1,23 @@
-var turnoFactory = function($http) {
+// Turno - Factory
+let turnoFactory = function($http) {
 
-  var baseUrl = "http://127.0.0.1:5000";
-  var _path = baseUrl + "/turno";
+  let baseUrl = "http://127.0.0.1:5000";
+  let _path = baseUrl + "/turno";
 
-  var _cadastrar = function(turno) {
+  let _cadastrar = function(turno) {
     return $http.post(_path, turno)
   };
 
-  var _atualizar = function(aluno) {
+  let _atualizar = function(aluno) {
     return $http.put(_path, turno)
   };
 
-  var _buscarPorId = function(id) {
+  let _buscarPorId = function(id) {
     return $http.get(_path + "/" + encodeURI(id))
   };
 
-  var _listar = function() {
-    return $http.get(_path)
+  let _listar = function() {
+    return $http.get(baseUrl + "/turnos")
   };
 
   return {

@@ -1,13 +1,13 @@
-<form name="campusForm">
+<form name="professorForm">
   <div class="form-group">
     <!-- Nome -->
     <label for='nome'> Nome: </label>
-    <input type='text' name='nome' class="form-control" ng-model="campus.nome" ng-minlength="3" ng-maxlength="25">
+    <input type='text' name='nome' class="form-control" ng-model="professor.nome" ng-minlength="3" ng-maxlength="25">
     <div>
-      <div ng-show="campusForm.nome.$error.minlength && campusForm.nome.$dirty" class="alert alert-danger">
+      <div ng-show="professorForm.nome.$error.minlength && professorForm.nome.$dirty" class="alert alert-danger">
         Por favor, o Nome não tem o tamanho mínimo válido!
       </div>
-      <div ng-show="campusForm.nome.$error.maxlength && campusForm.nome.$dirty" class="alert alert-danger">
+      <div ng-show="professorForm.nome.$error.maxlength && professorForm.nome.$dirty" class="alert alert-danger">
         Por favor, o Nome não tem o tamanho máximo válido!
       </div>
     </div>
@@ -22,22 +22,21 @@
   </button>
 </form>
 
-
+<!-- Tabela -->
 <div>
   <table class="table table-hover">
     <thead class="thead-light">
       <tr align="center">
         <th scope="col">Código</th>
-        <th scope="col">Sigla</th>
-        <th scope="col">Cidade</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Endereco</th>
       </tr>
     </thead>
     <tbody align="center">
-      <tr ng-repeat="campus in campi">
-        <td scope="row">{{campus.id_campus}}</td>
-        <td scope="row">{{campus.sigla}}</td>
-        <td scope="row">{{campus.cidade}}</td>
-
+      <tr ng-repeat="professor in professores">
+        <td scope="row">{{professor.id_professor}}</td>
+        <td scope="row">{{professor.nome}}</td>
+        <td scope="row">{{professor.id_endereco}}</td>
       </tr>
     </tbody>
   </table>

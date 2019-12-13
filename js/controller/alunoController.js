@@ -9,7 +9,6 @@ let alunoController = function($scope, alunoApi, $mdToast, $state) {
       // Converter formato da data: brazilian -> american.
       var data = moment(aluno.nascimento, "DD/MM/YYYY");
       aluno.nascimento = data.format("YYYY-MM-DD");
-      aluno.cpf = aluno.cpf.replace(/[^\d]+/g,'');
 
       alunoApi.cadastrar(aluno)
         .then(function(response) {
@@ -19,7 +18,7 @@ let alunoController = function($scope, alunoApi, $mdToast, $state) {
 
           // Redirecionamento de página.
           $state.transitionTo('alunos', {reload: true, inherit: false, notify: true});
-          
+
           var toast = $mdToast.simple()
               .textContent('O aluno foi cadastrado com sucesso!')
               .position('top right')

@@ -1,4 +1,4 @@
-let campusController = function($scope, campusApi, $mdToast) {
+let campusController = function($scope, campusApi, $mdToast, $state) {
 
     $scope.campus = {}
 
@@ -21,6 +21,9 @@ let campusController = function($scope, campusApi, $mdToast) {
           $mdToast.show(toast);
 
           limparFormulario();
+
+          // Redirecionamento de página.
+          $state.transitionTo('campi', {reload: true, inherit: false, notify: true});
         })
         .catch(function(error) {
           var toast = $mdToast.simple()
